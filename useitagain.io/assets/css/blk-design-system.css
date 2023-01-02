@@ -14488,6 +14488,52 @@ textarea.form-control:focus, textarea.form-control:active {
   max-height: 600px;
 }
 
+.navbar-translate .navbar-brand span {
+  margin-left: 15px;
+}
+
+.navbar-nav .nav-item .nav-link.icon {
+  margin-right: 8px;
+}
+.navbar-nav .nav-item .nav-link.icon i {
+  padding-right: 0px;
+}
+
+.article-page .page-header .page-header-image {
+  background-position: 50% !important;
+}
+.article-page .main-raised {
+  margin-top: -100px;
+}
+.article-page .content-center .title {
+  text-shadow: 3px 4px 10px black;
+}
+.article-page .navbar-nav .nav-item .nav-link {
+  background-color: #e14eca;
+  border-radius: 10px;
+}
+.article-page .navbar-translate {
+  background-color: #e14eca;
+  border-radius: 10px;
+}
+.article-page .navbar-translate .navbar-brand span {
+  margin-left: 15px;
+}
+.article-page .article-content-wrapper {
+  margin: 6rem 0px;
+}
+.article-page .article-content-wrapper .img-fluid {
+  margin: 15px 0;
+}
+.article-page .article-content-wrapper .img-small {
+  width: 50%;
+  margin: 15px 25%;
+}
+.article-page .article-content-wrapper h6.title {
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
 .progress-container {
   position: relative;
 }

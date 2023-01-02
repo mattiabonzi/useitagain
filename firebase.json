@@ -4,7 +4,11 @@
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**"
+      "**/node_modules/**",
+      "useitagain.io/package.json",
+      "useitagain.io/package-lock.json",
+      "useitagain.io/gulpfile.js",
+      "useitagain.io/assets/srcimg"
     ]
   }
 }
