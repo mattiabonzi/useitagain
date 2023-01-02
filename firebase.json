@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "useitagain.io",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
