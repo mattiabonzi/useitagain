@@ -1,5 +1,8 @@
 var gulp = require('gulp');
 var path = require('path');
+const fs = require('fs');
+const { exec } = require("child_process");
+
 const sass = require('gulp-sass')(require('sass'));
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
@@ -29,4 +32,22 @@ gulp.task('watch', function() {
 gulp.task('open', function() {
   gulp.src('index.html')
     .pipe(open());
+});
+
+gulp.task('deploy', function() {
+  exec("cp ../install.sh ./install.sh && \
+  cp ../hass-requirements.txt ./hass-requirements.txt && \
+  cd .. && firebase deploy && cd useitagain.io && \
+  rm -f ./install.sh ./hass-requirements.txt", (error, stdout, stderr) => {
+    if (error) {
+        console.log(`error: ${error.message}`);
+        return;
+    }
+    if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        return;
+    }
+    console.log(`stdout: ${stdout}`);
+    return;
+});  
 });

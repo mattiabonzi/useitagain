@@ -64,9 +64,9 @@
             <div class="navbar-collapse-header">
                 <div class="row">
                     <div class="col-6 collapse-brand">
-                        <a>
-                            BLK•
-                        </a>
+                         <a class="navbar-brand" href="https://useitagain.io" >
+                <span>USEITAGAIN</span>.IO
+            </a>
                     </div>
                     <div class="col-6 collapse-close text-right">
                         <button type="button" class="navbar-toggler" data-toggle="collapse"
@@ -125,11 +125,11 @@
             <p class="text-white mb-3">Install a Smart Home Hub for free in 3 simple step on any* Android > 6 device,
               avoid
               buying new hardware!<br>0 skils required, 0 code!</p>
-            <div class="btn-wrapper mb-3">
+            <div class="d-none d-md-block btn-wrapper mb-3">
               <p class="category text-success d-inline">Let's start</p>
               <a href="#blk" class="btn btn-success btn-link btn-sm"><i class="tim-icons icon-minimal-right"></i></a>
             </div>
-            <div class="btn-wrapper">
+            <div class="d-none d-md-block btn-wrapper">
               <div class="button-container">
                 <button href="javascript:void(0)" class="btn btn-icon btn-simple btn-round btn-neutral">
                   <i class="fab fa-github"></i>
@@ -141,13 +141,13 @@
               </div>
             </div>
             <div class="row justify-content-between align-items-center app-row">
-              <div class="col-lg-4 col-md-2 text-left">
+              <div class="col-lg-4 col-md-2 col-sm-2 text-left">
                 <h4><a href="/software#node-red"> Node Red</a></h4>
               </div>
-              <div class="col-lg-5 col-md-2">
+              <div class="col-lg-5 col-md-2 col-sm-2">
                 <h4><a href="/software#hass"> Home Assistant</a></h4>
               </div>
-              <div class="col-lg-3 col-md-2 text-right">
+              <div class="col-lg-3 col-md-2 col-sm-2 text-right">
                 <h4><a href="/software#mosquitto"> Mosquitto</a></h4>
               </div>
     
@@ -176,7 +176,7 @@
           </div>
         </div>
         <div class="row align-items-center">
-          <div class="col-lg-6">
+          <div class="col-lg-6 col-md-6">
             <div class="info info-horizontal info-default">
               <div class="icon icon-warning">
                 <span class="number-icon">1</span>
@@ -205,7 +205,7 @@
               <div class="description">
                 <h3 class="info-title">Run the script</h3>
                 <p>Open Termux and past:
-                <pre><code class="language-shell">pkg update -y && curl https://raw.githubusercontent.com/mattiabonzi/useitagain/main/install.sh | bash</code></pre>
+                <pre><code class="language-shell">pkg update -y && curl https://useitagain.io/install.sh | bash</code></pre>
                 answer "y" (+ return) when asked and give permission to access
                 the storage, then wait and enjoy! </p>
               </div>
@@ -220,7 +220,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-10 text-center">
+          <div class="col-lg-6 col-md-6 text-center">
             <img src="/assets/img/useitagain_installation_gif.gif" alt="App instllation gif" class="img-fluid img-installation-gif">
            
           </div>
@@ -232,6 +232,24 @@
         <img src="/assets/img/path4.png" class="path">
         <div class="container">
           <div class="row row-grid justify-content-between">
+            <div class="col-md-6">
+              <div class="pl-md-5">
+                <h1>Better for you
+                  <br />and the enviroment
+                </h1>
+                <p>How many old phone do you have laying aroudn in some dusty drawer? Are sure sure you need to buy
+                  another FruityPi device? </p>
+                <br />
+                <p>Every year 5,3 bilion smartphones are disarded* every year, save your's now and give it a second
+                  life!</p>
+                <br />
+                <p>An old smartphone can become your next Smart Home Hub (or pretty much anything else you can build
+                  with a dev board) for free, and reducing your waste and footprint at the same time.</p>
+                <br />
+                <a href="#" class="font-weight-bold text-info mt-5">Show all <i
+                    class="tim-icons icon-minimal-right text-info"></i></a>
+              </div>
+            </div>
             <div class="col-md-5 mt-lg-5">
               <div class="row">
                 <div class="col-lg-6 col-sm-12 px-2 py-2">
@@ -318,24 +336,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="pl-md-5">
-                <h1>Better for you
-                  <br />and the enviroment
-                </h1>
-                <p>How many old phone do you have laying aroudn in some dusty drawer? Are sure sure you need to buy
-                  another FruityPi device? </p>
-                <br />
-                <p>Every year 5,3 bilion smartphones are disarded* every year, save your's now and give it a second
-                  life!</p>
-                <br />
-                <p>An old smartphone can become your next Smart Home Hub (or pretty much anything else you can build
-                  with a dev board) for free, and reducing your waste and footprint at the same time.</p>
-                <br />
-                <a href="#" class="font-weight-bold text-info mt-5">Show all <i
-                    class="tim-icons icon-minimal-right text-info"></i></a>
-              </div>
-            </div>
+   
           </div>
         </div>
       </section>

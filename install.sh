@@ -123,7 +123,7 @@ if [ -n "$HASS" ];then
     rm cryptography-38.0.3.tar.gz
     tar -czf cryptography-38.0.3.tar.gz cryptography-38.0.3
 
-    curl https://raw.githubusercontent.com/mattiabonzi/useitagain/main/hass-requirements.txt -o req.txt
+    curl https://useitagain.io/hass-requirements.txt -o req.txt
 
     python -m venv homeassistant
     source homeassistant/bin/activate

@@ -773,6 +773,11 @@
     .nav-link {
       background-color: #e14eca;
       border-radius: 10px;
+
+      @include media-breakpoint-down(xs) {
+          background-color: transparent;
+          border-radius: 0px;
+      }
     }
   }
 }
@@ -807,3 +812,36 @@
   }
 }
 }
+
+
+@include media-breakpoint-down(xs) {
+  .path, .path1, .path2, .path3, .path4, .shapes {
+    display:none;
+  }
+
+  .app-row {
+    margin-top: 0px;
+
+    h4 {
+      font-size: 1rem;
+    }
+
+    .col-sm-2 {
+      max-width: 33.3%;
+    }
+}
+
+.page-header .content-center img {
+    height: unset !important;
+    margin-top: 0px !important;
+}
+
+.content-center {
+  top: 72% !important;
+}
+
+
+
+}
+
+

@@ -14512,6 +14512,12 @@ textarea.form-control:focus, textarea.form-control:active {
   background-color: #e14eca;
   border-radius: 10px;
 }
+@media (max-width: 575.98px) {
+  .article-page .navbar-nav .nav-item .nav-link {
+    background-color: transparent;
+    border-radius: 0px;
+  }
+}
 .article-page .navbar-translate {
   background-color: #e14eca;
   border-radius: 10px;
@@ -14534,6 +14540,27 @@ textarea.form-control:focus, textarea.form-control:active {
   margin-top: 15px;
 }
 
+@media (max-width: 575.98px) {
+  .path, .path1, .path2, .path3, .path4, .shapes {
+    display: none;
+  }
+  .app-row {
+    margin-top: 0px;
+  }
+  .app-row h4 {
+    font-size: 1rem;
+  }
+  .app-row .col-sm-2 {
+    max-width: 33.3%;
+  }
+  .page-header .content-center img {
+    height: unset !important;
+    margin-top: 0px !important;
+  }
+  .content-center {
+    top: 72% !important;
+  }
+}
 .progress-container {
   position: relative;
 }
