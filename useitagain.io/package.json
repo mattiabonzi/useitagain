@@ -8,11 +8,15 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "*",
+    "gulp-changed": "^4.0.3",
     "gulp-clean": "*",
+    "gulp-file-include": "^2.3.0",
     "gulp-install": "*",
     "gulp-open": "*",
     "gulp-sass": "*",
     "gulp-sourcemaps": "*",
+    "gulp-static-i18n-html": "^0.4.0",
+    "mustache": "^4.2.0",
     "sass": "*"
   }
 }

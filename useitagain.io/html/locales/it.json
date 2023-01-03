@@ -1,0 +1,57 @@
+{
+    "title": "Useitagain.io | Una seconda vita per il tuo smartphone",
+    "links": {
+        "path": "/it"
+    },
+    "menu": {
+        "issue": "Hai un problema?",
+        "project": "Il Progetto",
+        "articles": "Articoli",
+        "doc": "Documentazione",
+        "aboutme": "Su di me",
+        "contactme": "Contattami",
+        "license": "Licenze e Policy",
+        "lernmore" : "Scopri di pi&ugrave;"
+    },
+    "home": {
+        "title": "Dai una nuova vita al <br /> tuo <span class='text-white'>telefono</span>",
+        "subtitle": "Install a Smart Home Hub for free in 3 simple steps on any* Android > 6 device, avoid buying new hardware!<br>0 skills required, 0 code!",
+        "letstart": "Inizia ora",
+        "getting-started": "Getting started",
+        "getting-started-desc": " It's simple! Nothing more than installing two apps and copy-past a string!",
+        "install-fdroid": "Install F-droid",
+        "install-fdroid-desc": "Install <a href=''>F-Droid</a> on your smartphone/tablet (make sure you have enabled app installation from unknown source)",
+        "install-termux": "Install Termux",
+        "install-termux-desc": "Search and install <a href=''>Termux</a> from F-Droid (and optionally <a href=''>Termux api</a> and <a href=''>Termux boot</a> )",
+        "runscript": "Run the script",
+        "runscript-desc-1": "Open Termux and past:",
+        "runscript-desc-2": "answer \"y\" (+ return) when asked and give permission to access the storage, then wait and enjoy!",
+        "andnow": "And now what?",
+        "andnow-desc": "Read more and learn how to use your new Smart Home Hub!",
+        "betterfor": "Better for you<br />and the environment",
+        "betterfor-desc": "<p>How many old phone do you have lying around in some dusty drawer? Are you sure you need to buy another FruityPi device? </p> <br /> <p>Every year 5,3 billion smartphones are discarded* every year, save yours now and give it a second life!</p> <br /> <p>An old smartphone can become your next Smart Home Hub (or pretty much anything else you can build with a dev board) for free, and reducing your waste and footprint at the same time.</p> <br />",
+        "1less": "1 less",
+        "deivewasted": "Device wasted",
+        "builtinsensor": "built-in sesnor and module",
+        "saving": "of saving, at least",
+        "ram": "of ram on average",
+        "spreadtheword": "Spread the word",
+        "savemore": "ave more devices",
+        "share": "Share with your friends and family!"
+    
+    },
+    "faq": {
+        "root": "Does i have to Root my phone?",
+        "root-desc": " No, it's not necessary to root your phone for installing the software, but you can get some small perks rooting your device (as using the port 80 to proxy everything)",
+        "losedata": "Will i lose my data/It's dangerous to install?",
+        "losedata-desc": " No, due to Android's architecture, everything it's installed inside the Termux data dir and remain isolated from the rest of your phone. You can still use your phone as normal (although is recommended to use an old, unused phone for the installation).",
+        "device": "On which device can be installed?",
+        "device-desc": "Theoretically, it can be installed on every android device running Android version > 6, but that is not assured.",
+        "if-fail": "The installation fail, what can i do?",
+        "if-fail-desc": "A lot of things, but you will be required to have some technical knowledge.<br> See the troubleshooting section of the documentation.<br> You can always open an <a href='https://github.com/mattiabonzi/useitagain/issues'>issue</a>, to let the world know your problems."
+    },
+    "lang": {
+        "it": "Italiano",
+        "en": "Inglese | English"
+    }
+}
