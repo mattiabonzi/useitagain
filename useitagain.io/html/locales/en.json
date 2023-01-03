@@ -1,4 +1,5 @@
 {
+    "code" : "en",
     "title": "Useitagain.io | A second life for your smartphone",
     "links": {
         "path": ""
@@ -45,6 +46,7 @@
         "root-desc": " No, it's not necessary to root your phone for installing the software, but you can get some small perks rooting your device (as using the port 80 to proxy everything)",
         "losedata": "Will i lose my data/It's dangerous to install?",
         "losedata-desc": " No, due to Android's architecture, everything it's installed inside the Termux data dir and remain isolated from the rest of your phone. You can still use your phone as normal (although is recommended to use an old, unused phone for the installation).",
+        "losedata-notice" : "Anyway, remember that this is a free and open source software, and is provided \"as is\" without warranty of any kind, read more in the license section",
         "device": "On which device can be installed?",
         "device-desc": "Theoretically, it can be installed on every android device running Android version > 6, but that is not assured.",
         "if-fail": "The installation fail, what can i do?",

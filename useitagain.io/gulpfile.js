@@ -9,67 +9,61 @@ var autoprefixer = require('gulp-autoprefixer');
 const changed = require('gulp-changed');
 var sourcemaps = require('gulp-sourcemaps');
 var open = require('gulp-open');
-
+var sitemap = require('gulp-sitemap');
 const { fileURLToPath } = require('url');
 
-var Paths = {
-  HERE: './',
-  DIST: 'dist/',
-  CSS: './assets/css/',
-  SCSS_TOOLKIT_SOURCES: './assets/scss/blk-design-system.scss',
-  SCSS: './assets/scss/**/**'
-};
 
 gulp.task('compile-scss', function() {
-  return gulp.src('./scss/blk-design-system.scss')
+  return gulp.src('./assets/scss/blk-design-system.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
-    .pipe(sourcemaps.write(Paths.HERE))
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist/assets/css'));
 });
 
 gulp.task('watch', function() {
-  gulp.watch('./scss/**/**', gulp.series(['compile-scss']));
-  gulp.watch('./html/**/**.html', gulp.series(['i18n','fileinclude']));
-  gulp.watch('./html/locales/**/**', gulp.series(['i18n']));
-  gulp.watch('./img/**/**', gulp.series(['optimg']));
+  gulp.watch('./assets/scss/**/**', gulp.series(['compile-scss']));
+  gulp.watch('./html/**/**', gulp.series(['i18n','fileinclude']));
+  gulp.watch('./assets/img/**/**', gulp.series(['optimg']));
  gulp.parallel(['serve', 'open'])();
 });
 
 gulp.task('serve', function() {
-  exec('cd ./dist && serve', (e,s,se) => {console.log(e,s,se)});
+  return exec('cd ./dist && serve', (e,s,se) => {console.log(e,s,se)});
 });
 
 gulp.task('open', function() {
-  exec('open http://localhost:3000', (e,s,se) => {console.log(e,s,se)});
+  return exec('open http://localhost:3000', (e,s,se) => {console.log(e,s,se)});
 });
 
 gulp.task('deploy', function() {
-  gulp.series('init');
-return exec("cp ../install.sh ../hass-requirements.txt ./dist/ && \
-  rm -rf ./dist/parts ./dist/*/parts \
- firebase deploy && \
- rm -f ./dist/install.sh ./dist/hass-requirements.txt", 
-  (error, stdout, stderr) => {
-    if (error) {
-        console.log(`error: ${error.message}`);
-        return;
-    }
-    if (stderr) {
-        console.log(`stderr: ${stderr}`);
-        return;
-    }
-    console.log(`stdout: ${stdout}`);
-    return true;
-});  
+  gulp.series('build')();
+  return exec("firebase deploy", (e,s,se) => {console.log(e,s,se)});
 });
 
-gulp.task('init', function() {
- 
-  gulp.parallel(['compile-scss', 'optimg', 'i18n'])();
-  gulp.parallel([ 'fileinclude'])();
+gulp.task('build', function(done) {
+  gulp.series(['reset_build', 'copy_asset', 'compile-scss', 'optimg', 'i18n', 'fileinclude','delete_parts', 'copy_script_source', 'sitemap'])();
+  done();
 });
+
+gulp.task('delete_parts', function() {
+  return exec('rm -rf ./dist/parts ./dist/*/parts', (e,s,se) => {console.log(e,s,se)});
+});
+
+gulp.task('copy_script_source', function() {
+  return exec("cp ../install.sh ../hass-requirements.txt ./dist/", (e,s,se) => {console.log(e,s,se)});
+});
+
+gulp.task('copy_asset', function() {
+   exec("cp -rf ./assets/ ./dist/", (e,s,se) => {console.log(e,s,se)});
+   return exec("rm -rf ./dist/assets/scss/* ./dist/assets/img/*", (e,s,se) => {console.log(e,s,se)});
+});
+
+gulp.task('reset_build', function() {
+  return exec("rm -rf ./dist/*", (e,s,se) => {console.log(e,s,se)});
+});
+
 
 gulp.task('i18n', function() {
   return gulp.src('./html/**/**.html')
@@ -81,11 +75,8 @@ gulp.task('i18n', function() {
 });
 
 
-  
-
-
 gulp.task('optimg', function() {
-  return exec('cd ./img && cp -f ./*.gif ../dist/assets/img/ && find . -name "*" -not -name "*.gif" -exec optimizt --webp --force -o ../dist/assets/img/ {} +', 
+  return exec('cd ./assets/img && cp -f ./*.gif ../dist/assets/img/ && find . -name "*" -not -name "*.gif" -exec optimizt --webp --force -o ../dist/assets/img/ {} +', 
    (error, stdout, stderr) => {
      if (error) {
          console.log(`error: ${error.message}`);
@@ -109,4 +100,15 @@ gulp.task('fileinclude', function() {
       basepath: '@file'
     }))
     .pipe(gulp.dest('./dist/'));
+});
+
+
+gulp.task('sitemap', function () {
+    return gulp.src('dist/**/*.html', {
+            read: false
+        })
+        .pipe(sitemap({
+            siteUrl: 'http://useitagain.io'
+        }))
+        .pipe(gulp.dest('./dist'));
 });

@@ -14,9 +14,13 @@
     "gulp-install": "*",
     "gulp-open": "*",
     "gulp-sass": "*",
+    "gulp-sitemap": "^8.0.0",
     "gulp-sourcemaps": "*",
     "gulp-static-i18n-html": "^0.4.0",
     "mustache": "^4.2.0",
     "sass": "*"
+  },
+  "dependencies": {
+    "firebase": "^9.15.0"
   }
 }
