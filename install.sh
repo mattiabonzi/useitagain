@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+
+#
+# Copyright (c) 2023-2026 Mattia Bonzi - Tuchsoft OÜ
+# Licensed under the MIT License. See LICENSE file in the project root for full license information.
+#
+
 clear
 set -e
 
